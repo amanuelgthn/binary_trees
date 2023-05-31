@@ -1,5 +1,5 @@
 #include"binary_trees.h"
-//**
+/**
 **binary_tree_inorder-a function that goes through a binary tree
 *using an iorder traversal
 *@tree:binary tree to be traversed in order
