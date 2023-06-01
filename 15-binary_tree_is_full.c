@@ -1,4 +1,4 @@
-#include"binary_rees.h"
+#include"binary_trees.h"
 /**
 *binary_tree_is_full-functions that checks if a binary tree is full
 *@tree: a pointer to the root node of the tree to be checked
