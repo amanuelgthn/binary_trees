@@ -51,6 +51,7 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
 bst_t *bst_insert(bst_t **tree, int value);
 const binary_tree_t *binary_tree_uncle_const(const binary_tree_t *node);
+const binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
 const binary_tree_t *binary_tree_sibling_const(const binary_tree_t *node);
 bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
