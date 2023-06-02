@@ -52,9 +52,11 @@ const binary_tree_t *second)
 	else if (binary_tree_sibling((binary_tree_t *)(first))
 	== (binary_tree_t *)(second))
 		return ((binary_tree_t *)(first->parent));
-	else if (binary_tree_uncle((binary_tree_t *)(first)) == (binary_tree_t *)(second))
+	else if (binary_tree_uncle((binary_tree_t *)(first))
+	== (binary_tree_t *)(second))
 		return ((binary_tree_t *)(second->parent));
-	else if (binary_tree_uncle((binary_tree_t *)(second)) == (binary_tree_t *)(first))
+	else if (binary_tree_uncle((binary_tree_t *)(second))
+	== (binary_tree_t *)(first))
 		return ((binary_tree_t *)(first->parent));
 	else
 		return (binary_trees_ancestor(first->parent, second->parent));
