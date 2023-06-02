@@ -45,16 +45,18 @@ const binary_tree_t *second)
 		return (NULL);
 	if (first == second)
 		return ((binary_tree_t *)(first));
-	if (first->parent == second)
+	else if (first->parent == second)
 		return ((binary_tree_t *)(second));
-	if (second->parent == first)
+	else if (second->parent == first)
 		return ((binary_tree_t *)(first));
-	if (binary_tree_sibling((binary_tree_t *)(first))
+	else if (binary_tree_sibling((binary_tree_t *)(first))
 	== (binary_tree_t *)(second))
 		return ((binary_tree_t *)(first->parent));
-	if (binary_tree_uncle((binary_tree_t *)(first)) == (binary_tree_t *)(second))
+	else if (binary_tree_uncle((binary_tree_t *)(first)) == (binary_tree_t *)(second))
 		return ((binary_tree_t *)(second->parent));
-	if (binary_tree_uncle((binary_tree_t *)(second)) == (binary_tree_t *)(first))
+	else if (binary_tree_uncle((binary_tree_t *)(second)) == (binary_tree_t *)(first))
 		return ((binary_tree_t *)(first->parent));
-	return (binary_trees_ancestor(first->parent, second->parent));
+	else
+		return (binary_trees_ancestor(first->parent, second->parent));
+	return (NULL);
 }
