@@ -1,4 +1,17 @@
-#include "binary_trees.h"
+#include"binary_trees.h"
+void binary_tree_print_level_order(const binary_tree_t *node,
+int level)
+{
+	if (node == NULL)
+		return;
+	if (level == 1)
+		printf("%d\n", node->n);
+	else if (level > 1)
+	{
+		binary_tree_print_level_order(node->left, level - 1);
+		binary_tree_print_level_order(node->right, level - 1);
+	}
+}
 /**
  *binary_tree_height-functioin that measures the height of a binary tree
  *@tree:a pointer to the root node of the tree to measure the height
@@ -16,19 +29,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (left_height >= right_height)
 		return (left_height + 1);
 	return (right_height + 1);
-}
-void binary_tree_print_level_order(const binary_tree_t *node,
-int level)
-{
-	if (node == NULL)
-		return;
-	if (level == 1)
-		printf("%d\n", node->n);
-	else if (level > 1)
-	{
-		binary_tree_print_level_order(node->left, level - 1);
-		binary_tree_print_level_order(node->right, level - 1);
-	}
 }
 /**
  *binary_tree_levelorder-function that goes through
