@@ -34,9 +34,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	if (binary_tree_is_full(tree) == 1)
-		return (1);
-	else if (binary_tree_size(tree->left) == binary_tree_size(tree->right))
+	if (binary_tree_is_full(tree) == 1 && (binary_tree_size(tree->left) == binary_tree_size(tree->right)))
 		return (1);
 	return (0);
 }
