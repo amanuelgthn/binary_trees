@@ -19,14 +19,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 void binary_tree_print_level_order(const binary_tree_t *node,
 int level)
-/**
- *binary_tree_print_level_order-function that goes through a node to print
- *data on the same level
- *@node: a pointer to the node to print at the same level as the node
- *@level:level of the binary tree
- *@func: a pointer to the function to call for each node
- *Do nothing if either tree or func is NULL
- **/
 {
 	if (node == NULL)
 		return;
