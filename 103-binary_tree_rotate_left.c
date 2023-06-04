@@ -21,10 +21,11 @@ void binary_tree_delete(binary_tree_t *tree)
 **/
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
 {
+	binary_tree_t *new;
+
 	if (tree == NULL)
 		return (NULL);
-	binary_tree_t *new = tree->right;
-
+	new = tree->right;
 	tree->right = new->left;
 	if (new->left)
 		new->left->parent = tree;
