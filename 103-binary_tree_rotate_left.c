@@ -21,17 +21,14 @@ void binary_tree_delete(binary_tree_t *tree)
 **/
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
 {
-	binary_tree_t *new = malloc(sizeof(binary_tree_t));
+	binary_tree_t *new = tree->right;
 
 	if (tree == NULL)
 		return (NULL);
-	new->n = tree->right->n;
-	new->right = tree->right->right;
-	new->left = malloc(sizeof(binary_tree_t));
-	new->left->parent = new;
-	new->left->n = tree->n;
-	new->left->right = tree->right->left;
-	new->left->left = tree->left;
-	tree->right = new;
+	tree->right = new->left;
+	if (new->left)
+		new->left->parent = tree;
+	new->left = tree;
+	tree->parent = new;
 	return (new);
 }
