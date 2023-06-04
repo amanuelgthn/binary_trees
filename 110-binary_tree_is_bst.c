@@ -10,9 +10,9 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 		return (0);
 	if (tree->left->n >= tree->n || tree->left->n >= tree->right->n)
 		return (0);
-	if (tree->left)
+	/**if (tree->left)
 		binary_tree_is_bst(tree->left);
 	if (tree->right)
-		binary_tree_is_bst(tree->right);
+		binary_tree_is_bst(tree->right);**/
 	return (1);
 }
